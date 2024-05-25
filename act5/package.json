@@ -1,0 +1,16 @@
+{
+  "name": "act5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build": "purgecss --css sass/custom.css --content index.html --output sass/reducido.css"   
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.77.2"
+  }
+}
