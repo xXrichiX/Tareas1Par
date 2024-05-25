@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-RwCFvl1a0xK6lYKtWb7hqFux2koyY4/7Dd3+VvQYDbNaLReVP7n1QF3/3Q1Lk0/7GMc97BgOUq1+7z2Iyfs0kA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-RwCFvl1a0xK6lYKtWb7hqFux2koyY4/7Dd3+VvQYDbNaLReVP7n1QF3/3Q1Lk0/7GMc97BgOUq1+7z2Iyfs0kA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5deb3; /* Color beige */
+        }
+        .header {
+            background-color: #007bff; /* Dark Blue */
+            padding: 20px 0;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .header .navbar {
+            padding: 0;
+        }
+        .special-offer {
+            background-color: #d1c4e9; /* Lavender */
+            padding: 40px 0;
+            text-align: center;
+        }
+        .special-offer h2 {
+            color: #333;
+        }
+        .trending-products {
+            padding: 40px 0;
+        }
+        .trending-products h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .product-card {
+            border: 1px solid #b0bec5; /* Light Gray */
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            background-color: #ffffff; /* White */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-card h5 {
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        .filter-buttons .btn {
+            margin: 0 10px;
+        }
+        .promo-section {
+            background-color: #ffa726; /* Orange */
+            color: white;
+            padding: 50px 0;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .promo-content img {
+            border-radius: 20px;
+        }
+        .promo-text {
+            max-width: 500px;
+            margin-left: 30px;
+        }
+        .promo-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .promo-text p {
+            margin-bottom: 20px;
+        }
+        .promo-text .btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+        .special-products {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .special-products h3 {
+            margin-bottom: 30px;
+        }
+        .product-card.highlight {
+            background-color: #ffcc80; /* Light Orange */
+        }
+        .blog-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .blog-section .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .blog-section .blog-text {
+            text-align: left;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #007bff; /* Dark Blue */
+            padding: 40px 0;
+            color: #fff;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+   <!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/portadota.jpg" alt="Dino Logo">
+            </div>
+            <div class="col-md-9">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dinosaurs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <!-- Agrega los iconos de perfil, búsqueda y carrito de compras aquí -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Special Offer Section -->
+    <section class="special-offer">
+        <div class="container">
+            <h2>Special Offer 30% Flat</h2>
+            <h1>Exclusive Dinosaur Collection</h1>
+            <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/ankylosaurus-mini.png" alt="Special Offer" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending-products">
+        <div class="container">
+            <h3>Trending Dinosaurs</h3>
+            <div class="filter-buttons text-center mb-4">
+                <button class="btn btn-success">Featured</button>
+                <button class="btn btn-outline-success">Latest</button>
+                <button class="btn btn-outline-success">Best seller</button>
+            </div>
+            <div class="row">
+                <!-- Product Card -->
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/pteranodon-mini.png" alt="Pteranodon">
+                        <h5>Pteranodon</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/brachiosaurus-mini.png" alt="Brachiosaurus">
+                        <h5>Brachiosaurus</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/diplodocus-mini.png" alt="Diplodocus">
+                        <h5>Diplodocus</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/estegosaurio_p.jpg" alt="Stegosaurus">
+                        <h5>Stegosaurus</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/iguanodon-mini.png" alt="Iguanodon">
+                        <h5>Iguanodon</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/pteranodon-mini.png" alt="Pteranodon">
+                        <h5>Pteranodon</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/spinosaurus-mini.png" alt="Spinosaurus">
+                        <h5>Spinosaurus</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/triceratops-mini.png" alt="Triceratops">
+                        <h5>Triceratops</h5>
+                        <p>★★★★☆</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <div class="promo-section">
+        <div class="container">
+            <div class="promo-content">
+                <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/tyrannosaurus-rex-mini.png" alt="Promo Image">
+                <div class="promo-text">
+                    <h2>Limited Time Offer!</h2>
+                    <p>25% Off</p>
+                    <p>Best Dinosaur Collection</p>
+                    <button class="btn">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Products Section -->
+    <section class="special-products">
+        <div class="container">
+            <h3>Special Dinosaurs</h3>
+            <div class="row">
+                <!-- Product Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/OTRA.jpg" alt="Tyrannosaurus Rex">
+                        <h5>Tyrannosaurus Rex</h5>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card highlight">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/OTRAA.jpg" alt="Velociraptor">
+                        <h5>Velociraptor</h5>
+                        <button class="btn btn-dark">Featured</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/OTRAAA.jpg" alt="Triceratops">
+                        <h5>Triceratops</h5>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/OTRAAAAA.jpg" alt="Stegosaurus">
+                        <h5>Stegosaurus</h5>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/OTRAAAAAA.jpg" alt="Brachiosaurus">
+                        <h5>Brachiosaurus</h5>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/MASIMAGENES/Sin título.jpg" alt="Spinosaurus">
+                        <h5>Spinosaurus</h5>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="blog-text">
+                        <h3>From Our Blog</h3>
+                        <h5>Latest Dinosaur News</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="/Users/angelmendez/Documents/CARPETAS/Programacion/Codigos/HTML/tareaa/1PAR/ACT5/imagenDinosaurio/iguanodon-mini.png" alt="Blog Image" class="blog-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <address>
+                        1234 Dinosaur Ave<br>
+                        Jurassica, TX 99999<br>
+                        Phone: (123) 456-7890<br>
+                        Email: info@dinoexample.com
+                    </address>
+                </div>
+                <div class="col-md-3">
+                    <h5>Information</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Extras</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">Gift Vouchers</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Specials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>My Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Wish List</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-+6v3V/PQ5RaVNmbz9n0J29b8XLp+yGP13Nt8fJSwaCU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
