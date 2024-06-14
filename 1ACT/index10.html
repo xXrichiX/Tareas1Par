@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 10</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="intro">Texto de introducción</p>
+    <p id="p1">Hola Mundo</p>
+    <h1 id="titulo">Encabezado Viejo</h1>
+    <div id="main">
+        <p>Parrafo en main 1</p>
+        <p>Parrafo en main 2</p>
+    </div>
+    <p class="intro">Este es un párrafo introductorio.</p>
+    <p class="intro">Este es otro párrafo introductorio.</p>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+    <h1>Encabezado</h1>
+    <div class="list">Esta es una lista</div>
+    <form id="frm1" onsubmit="return validarFormulario()">
+        <input type="text" name="nombre" value="Juan">
+        <input type="text" name="apellido" value="Pérez">
+        <button type="submit">Enviar</button>
+    </form>
+    <br>
+    <input type="text" id="numero">
+    <button type="button" onclick="miFunction()">Validar número</button>
+    <p id="demo3"></p>
+    <button id="btn">Haz clic</button>
+    <br>
+    <img src="git.png" id="montaña">
+
+    <script>
+        // Paso 1a
+        document.getElementById("demo").innerHTML = "¡Hola Mundo!";
+
+        // Paso 1b
+        const elementoIntro = document.getElementById("intro");
+        console.log(elementoIntro);
+
+        // Paso 1c
+        document.getElementById("p1").innerHTML = "¡Nuevo Texto!";
+
+        // Paso 1d
+        const elementoTitulo = document.getElementById("titulo");
+        elementoTitulo.innerHTML = "Nuevo Encabezado";
+
+        // Paso 2a
+        const elements = document.getElementsByTagName("p");
+        console.log(elements);
+
+        // Paso 2b
+        const mainElement = document.getElementById("main");
+        console.log(mainElement);
+        const mainParagraphs = mainElement.getElementsByTagName("p");
+        console.log(mainParagraphs);
+
+        // Paso 3a
+        const introElements = document.getElementsByClassName("intro");
+        console.log(introElements);
+
+        // Paso 4a
+        const introParagraphs = document.querySelectorAll("p.intro");
+        console.log(introParagraphs);
+
+        // Paso 4b
+        const listItems = document.querySelectorAll("ul > li");
+        console.log(listItems);
+
+        // Paso 4c
+        const h1Element = document.querySelector("h1");
+        console.log(h1Element);
+
+        // Paso 4d
+        const list = document.querySelector(".list");
+        console.log(list);
+
+        // Paso 4e
+        const listaDeElementos = document.querySelectorAll("ul > li");
+        listaDeElementos.forEach((item) => {
+            console.log(item);
+        });
+
+        // Paso 4f
+        h1Element.style.color = "blue";
+
+        // Paso 5a
+        const form = document.forms["frm1"];
+        let texto = "";
+        for (let i = 0; i < form.length; i++) {
+            texto += form.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = texto;
+        console.log(form);
+
+        // Paso 6a
+        let lista = document.createElement("ul");
+        document.body.appendChild(lista);
+
+        let elemento1 = document.createElement("li");
+        elemento1.textContent = "Flor";
+        lista.appendChild(elemento1);
+
+        let elemento2 = document.createElement("li");
+        elemento2.textContent = "Jaguar";
+        lista.appendChild(elemento2);
+
+        // Paso 7a
+        document.getElementById("btn").addEventListener("click", function() {
+            alert("¡Botón clicado!");
+        });
+
+        // Paso 8a
+        function validarFormulario() {
+            let x = document.forms["frm1"]["nombre"].value;
+            if (x === "") {
+                alert("Se debe completar el nombre");
+                return false;
+            }
+            return true;
+        }
+
+        // Paso 8b
+        function miFunction() {
+            let x = document.getElementById("numero").value;
+            let texto;
+            if (isNaN(x) || x < 1 || x > 10) {
+                texto = "Entrada no válida";
+            } else {
+                texto = "Entrada correcta";
+            }
+            document.getElementById("demo3").innerHTML = texto;
+        }
+
+        // Paso 9
+        document.getElementById("montaña").src="perrito.png";
+
+        // Paso 10
+        document.getElementById("demo").innerHTML = "Fecha: " + new Date();
+    </script>
+</body>
+</html>
