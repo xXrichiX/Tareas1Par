@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: url('image/desktop-wallpaper-yugioh-card-yu.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.card-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0e79b2; /* Color de fondo que simula el diseño trasero de las cartas de Yu-Gi-Oh! */
+    color: #fff; /* Color del texto */
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url('image/desktop-wallpaper-yugioh-card-yu.jpg'); /* Imagen opcional que simula el diseño trasero de las cartas */
+    background-size: cover; /* Ajusta la imagen de fondo al tamaño del botón */
+}
+
+.card-button:hover {
+    background-color: #0c6d9d; /* Cambio de color de fondo al pasar el mouse */
+}
+
+.card-button:focus {
+    outline: none; /* Elimina el contorno al hacer clic */
+}
+
+.card-button:active {
+    transform: translateY(1px); /* Efecto de clic */
+}
